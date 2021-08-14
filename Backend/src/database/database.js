@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-/*
+
 export const sequelize = new Sequelize(
     'd64mbtp8omnrhv', //database 
     'lyxzouckcdbwnh', //user 
@@ -14,13 +14,16 @@ export const sequelize = new Sequelize(
             idle:10000
         },
         logging: false,
-        dialectOptions:{
-            ssl:true
-        }
+        dialectOptions: {
+            ssl: {
+              require: true,
+              rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+            }
+          },
     }
 )
-*/
 
+/*
 export const sequelize = new Sequelize(
     //'FaztCode', //database
     'vshop', //database
@@ -38,3 +41,4 @@ export const sequelize = new Sequelize(
         logging: false
     }
 )
+*/
